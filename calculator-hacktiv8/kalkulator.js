@@ -173,51 +173,54 @@ function hitung() {
 
     let result = 0;
 
-    kalkulator.store.push(kalkulator.temp);
-    console.log(kalkulator.store)
-    let hitungin = kalkulator.store;
+    if (kalkulator.temp != "") {
+        kalkulator.store.push(kalkulator.temp);
+        console.log(kalkulator.store)
+        let hitungin = kalkulator.store;
 
-    if (hitungin.includes('*') || hitungin.includes('/')) {
-        while (hitungin.includes('*') || hitungin.includes('/')) {
-            for (let i = 0; i < hitungin.length; i++) {
-                if (hitungin[i] == '*') {
-                    result = Number(hitungin[i - 1]) * Number(hitungin[i + 1]);
-                    hitungin.splice(i - 1, 3, result);
+        if (hitungin.includes('*') || hitungin.includes('/')) {
+            while (hitungin.includes('*') || hitungin.includes('/')) {
+                for (let i = 0; i < hitungin.length; i++) {
+                    if (hitungin[i] == '*') {
+                        result = Number(hitungin[i - 1]) * Number(hitungin[i + 1]);
+                        hitungin.splice(i - 1, 3, result);
 
-                }
-                if (hitungin[i] == '/') {
-                    result = Number(hitungin[i - 1]) / Number(hitungin[i + 1]);
-                    hitungin.splice(i - 1, 3, result);
-                    console.log(hitungin + 'AAAAAAAAAAABBBBBBBBB');
-                }
-            }
-        }
-    }
-    console.log(hitungin + "AAAAA");
-    if (hitungin.includes('+') || hitungin.includes('-')) {
-        while (hitungin.includes('+') || hitungin.includes('-')) {
-            for (let i = 0; i < hitungin.length; i++) {
-                if (hitungin[i] == '+') {
-                    result = Number(hitungin[i - 1]) + Number(hitungin[i + 1]);
-                    hitungin.splice(i - 1, 3, result);
-                    console.log(hitungin);
-                }
-                if (hitungin[i] == '-') {
-                    result = Number(hitungin[i - 1]) - Number(hitungin[i + 1]);
-                    hitungin.splice(i - 1, 3, result);
-                    console.log(hitungin);
+                    }
+                    if (hitungin[i] == '/') {
+                        result = Number(hitungin[i - 1]) / Number(hitungin[i + 1]);
+                        hitungin.splice(i - 1, 3, result);
+                        console.log(hitungin + 'AAAAAAAAAAABBBBBBBBB');
+                    }
                 }
             }
         }
-    }
+        console.log(hitungin + "AAAAA");
+        if (hitungin.includes('+') || hitungin.includes('-')) {
+            while (hitungin.includes('+') || hitungin.includes('-')) {
+                for (let i = 0; i < hitungin.length; i++) {
+                    if (hitungin[i] == '+') {
+                        result = Number(hitungin[i - 1]) + Number(hitungin[i + 1]);
+                        hitungin.splice(i - 1, 3, result);
+                        console.log(hitungin);
+                    }
+                    if (hitungin[i] == '-') {
+                        result = Number(hitungin[i - 1]) - Number(hitungin[i + 1]);
+                        hitungin.splice(i - 1, 3, result);
+                        console.log(hitungin);
+                    }
+                }
+            }
+        }
 
 
-    console.log(hitungin.toString());
-    kalkulator.layar = kalkulator.layar + "=" + hitungin.toString();
-    kalkulator.pointToggle = false;
-    kalkulator.temp = '';
-    kalkulator.afterHitung = true;
-    if (isNaN(kalkulator.store[0])) {
-        NaNHandler();
+        console.log(hitungin.toString());
+        kalkulator.layar = kalkulator.layar + "=" + hitungin.toString();
+        kalkulator.pointToggle = false;
+        kalkulator.temp = '';
+        kalkulator.afterHitung = true;
+        if (isNaN(kalkulator.store[0])) {
+            NaNHandler();
+        }
     }
+
 }
