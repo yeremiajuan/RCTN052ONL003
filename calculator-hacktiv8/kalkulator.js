@@ -74,7 +74,7 @@ function inputDigit(digit) {
         kalkulator.temp = '';
         kalkulator.store = [];
     }
-    console.log(digit);
+    //console.log(digit);
     if (digit === '.' && kalkulator.pointToggle == false) {
         if (kalkulator.layar === '0') {
             kalkulator.layar = digit;
@@ -166,7 +166,7 @@ function handleOperator(operator) {
         kalkulator.pointToggle = false;
     }
 
-    console.log(kalkulator.store);
+    //console.log(kalkulator.store);
 
 }
 function hitung() {
@@ -175,7 +175,7 @@ function hitung() {
 
     if (kalkulator.temp != "") {
         kalkulator.store.push(kalkulator.temp);
-        console.log(kalkulator.store)
+        //console.log(kalkulator.store)
         let hitungin = kalkulator.store;
 
         if (hitungin.includes('*') || hitungin.includes('/')) {
@@ -194,7 +194,7 @@ function hitung() {
                 }
             }
         }
-        console.log(hitungin + "AAAAA");
+        //console.log(hitungin + "AAAAA");
         if (hitungin.includes('+') || hitungin.includes('-')) {
             while (hitungin.includes('+') || hitungin.includes('-')) {
                 for (let i = 0; i < hitungin.length; i++) {
@@ -207,14 +207,13 @@ function hitung() {
                         result = Number(hitungin[i - 1]) - Number(hitungin[i + 1]);
                         hitungin.splice(i - 1, 3, result);
                         i = 0;
-
                     }
                 }
             }
         }
 
 
-        console.log(hitungin.toString());
+        //console.log(hitungin.toString());
         kalkulator.layar = kalkulator.layar + "=" + hitungin.toString();
         kalkulator.pointToggle = false;
         kalkulator.temp = '';
