@@ -184,12 +184,12 @@ function hitung() {
                     if (hitungin[i] == '*') {
                         result = Number(hitungin[i - 1]) * Number(hitungin[i + 1]);
                         hitungin.splice(i - 1, 3, result);
-
+                        i = 0;
                     }
-                    if (hitungin[i] == '/') {
+                    else if (hitungin[i] == '/') {
                         result = Number(hitungin[i - 1]) / Number(hitungin[i + 1]);
                         hitungin.splice(i - 1, 3, result);
-                        console.log(hitungin + 'AAAAAAAAAAABBBBBBBBB');
+                        i = 0;
                     }
                 }
             }
@@ -201,12 +201,13 @@ function hitung() {
                     if (hitungin[i] == '+') {
                         result = Number(hitungin[i - 1]) + Number(hitungin[i + 1]);
                         hitungin.splice(i - 1, 3, result);
-                        console.log(hitungin);
+                        i = 0;
                     }
-                    if (hitungin[i] == '-') {
+                    else if (hitungin[i] == '-') {
                         result = Number(hitungin[i - 1]) - Number(hitungin[i + 1]);
                         hitungin.splice(i - 1, 3, result);
-                        console.log(hitungin);
+                        i = 0;
+
                     }
                 }
             }
