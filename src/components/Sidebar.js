@@ -1,7 +1,6 @@
 import React from "react";
 import '../Sidebar.css';
-import { HashLink as Link } from "react-router-hash-link";
-import { NavHashLink } from "react-router-hash-link";
+import { Link, animateScroll as scroll } from "react-scroll";
 import headshot from '../headshot.png';
 
 
@@ -19,24 +18,72 @@ export default class Sidebar extends React.Component {
                             <img className="is-rounded" src={headshot} alt="Logo" />
                         </figure>
                     </div>
-                    <li >
-                        <NavHashLink smooth to="#about" activeClassName="active">About</NavHashLink>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="about"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            About
+                        </Link>
                     </li>
                     <li>
-                        <NavHashLink smooth to="#experience" activeClassName="active">Experience</NavHashLink>
-                    </li>
-
-                    <li>
-                        <NavHashLink smooth to="#skills" activeClassName="active">Skills</NavHashLink>
-                    </li>
-                    <li>
-                        <NavHashLink smooth to="#education" activeClassName="active">Education</NavHashLink>
-                    </li>
-                    <li>
-                        <NavHashLink smooth to="#awards" activeClassName="active">Awards</NavHashLink>
+                        <Link
+                            activeClass="active"
+                            to="experience"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            Experience
+                        </Link>
                     </li>
                     <li>
-                        <NavHashLink smooth to="#interest" activeClassName="active">Interest</NavHashLink>
+                        <Link
+                            activeClass="active"
+                            to="skills"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            Skills
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="education"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            Education
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="awards"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                        >
+                            Awards
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to="interest"
+                            spy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={500}
+                        >
+                            Interest
+                        </Link>
                     </li>
                 </ul>
 
