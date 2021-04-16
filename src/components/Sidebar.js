@@ -22,18 +22,21 @@ export default class Sidebar extends React.Component {
                     <li >
                         <NavHashLink smooth to="#about" activeClassName="active">About</NavHashLink>
                     </li>
+                    <li>
+                        <NavHashLink smooth to="#experience" activeClassName="active">Experience</NavHashLink>
+                    </li>
 
+                    <li>
+                        <NavHashLink smooth to="#skills" activeClassName="active">Skills</NavHashLink>
+                    </li>
+                    <li>
+                        <NavHashLink smooth to="#education" activeClassName="active">Education</NavHashLink>
+                    </li>
                     <li>
                         <NavHashLink smooth to="#awards" activeClassName="active">Awards</NavHashLink>
                     </li>
                     <li>
-                        <NavHashLink smooth to="#experience" activeClassName="active">Experience</NavHashLink>
-                    </li>
-                    <li>
                         <NavHashLink smooth to="#interest" activeClassName="active">Interest</NavHashLink>
-                    </li>
-                    <li>
-                        <NavHashLink smooth to="#skills" activeClassName="active">Skills</NavHashLink>
                     </li>
                 </ul>
 

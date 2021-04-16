@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import About from "./components/About";
 import Awards from "./components/Awards";
+import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Interest from "./components/Interest";
 import Skills from "./components/Skills";
@@ -16,10 +17,11 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Sidebar />
         <About />
-        <Awards />
         <Experience />
-        <Interest />
         <Skills />
+        <Education />
+        <Awards />
+        <Interest />
       </BrowserRouter>
     );
   }
