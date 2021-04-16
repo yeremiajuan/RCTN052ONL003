@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 export default class About extends React.Component {
 
@@ -8,21 +9,29 @@ export default class About extends React.Component {
         super(props);
 
         this.state = {
-            judul: "About Me",
+            judul: "Yeremia Juan",
             email: "yeremiajuant@gmail.com",
             nohp: "08128294xxxx",
-            about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+            about: "I am Lorem Ipsum that is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         };
     }
 
     render() {
         return (
-            <div>
-                <h1>{this.state.judul}</h1>
-                <p>{this.state.email}, {this.state.nohp}</p>
-                <p>{this.state.about}</p>
-                <FontAwesomeIcon icon={faCoffee} />
-            </div>
+            <div className="columns Coba is-vcentered" id="about">
+                <div className="column is-half is-offset-one-quarter ">
+                    <h1 className="title is-1">{this.state.judul}</h1>
+                    <p>{this.state.email} | {this.state.nohp}</p>
+                    <div className="bio">
+                        <p>{this.state.about}</p>
+
+                    </div>
+                    <div className="mt-3">
+                        <FontAwesomeIcon icon={faGithubSquare} size="2x" />
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                    </div>
+                </div>
+            </div >
         );
     }
 }

@@ -1,27 +1,43 @@
 import React from "react";
+import '../Sidebar.css';
+import { HashLink as Link } from "react-router-hash-link";
+import { NavHashLink } from "react-router-hash-link";
+import headshot from '../headshot.png';
 
 
-export default class About extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            judul: "About Me",
-            email: "yeremiajuant@gmail.com",
-            nohp: "08128294xxxx",
-            about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-        };
-    }
+export default class Sidebar extends React.Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.state.judul}</h1>
-                <p>{this.state.email}, {this.state.nohp}</p>
-                <p>{this.state.about}</p>
-                
-            </div>
+            <React.Fragment>
+
+                <ul className="menu-list">
+
+
+                    <div className="column mt-5 mb-5">
+                        <figure className="image is-128x128">
+                            <img className="is-rounded" src={headshot} alt="Logo" />
+                        </figure>
+                    </div>
+                    <li >
+                        <NavHashLink smooth to="#about" activeClassName="active">About</NavHashLink>
+                    </li>
+
+                    <li>
+                        <NavHashLink smooth to="#awards" activeClassName="active">Awards</NavHashLink>
+                    </li>
+                    <li>
+                        <NavHashLink smooth to="#experience" activeClassName="active">Experience</NavHashLink>
+                    </li>
+                    <li>
+                        <NavHashLink smooth to="#interest" activeClassName="active">Interest</NavHashLink>
+                    </li>
+                    <li>
+                        <NavHashLink smooth to="#skills" activeClassName="active">Skills</NavHashLink>
+                    </li>
+                </ul>
+
+            </React.Fragment>
         );
     }
 }
