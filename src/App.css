@@ -15,6 +15,8 @@
 
 .App-header {
   background-color: #282c34;
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,13 +28,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
