@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMovies, fetchMoviesBySearch } from "./store/actions/movieActions";
+import Movie from './components/Movie';
+import Search from './components/Search';
 
-function App() {
+
+const App = () => {
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState("man")
+  const state = useSelector((state) => {
+    return state;
+  })
+
+  useEffect(() => {
+    dispatch(fetchMoviesBySearch(searchValue));
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+      <div className='row'>
+        <Movie movies={state.movies} />
+        <Search />
+      </div>
+    </div >
+  )
 }
 
 export default App;
