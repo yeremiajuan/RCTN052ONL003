@@ -100,7 +100,7 @@ button {
     justify-content: center
 }
 
-.movies>.loader {
+.loader {
     border: 12px solid #f3f3f3;
     border-top-color: #22254b;
     width: 120px;
@@ -152,5 +152,3 @@ button {
         transform: rotate(1turn)
     }
 }
-
-/*# sourceMappingURL=main.54369b93.chunk.css.map */

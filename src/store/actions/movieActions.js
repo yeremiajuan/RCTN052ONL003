@@ -19,6 +19,12 @@ export const fetchMoviesBySearch = (searchValue) => {
     }
 }
 
+export const setLoading = () => {
+    return {
+        type: "LOADING"
+    };
+};
+
 // export const fetchMovies = () => {
 //     return (dispatch) => {
 //         axios({

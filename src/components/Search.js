@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { setLoading } from '../store/actions/movieActions';
 
 export const Search = ({ searchMovie }) => {
 
