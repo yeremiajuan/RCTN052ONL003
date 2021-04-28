@@ -1,6 +1,5 @@
 
 const initialState = {
-    text: '',
     movies: []
 }
 
@@ -16,11 +15,6 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 movies: action.payload
             }
-        case "SEARCH MOVIE":
-            return {
-                ...state,
-                text: action.payload,
-            };
         default:
             return state;
     }

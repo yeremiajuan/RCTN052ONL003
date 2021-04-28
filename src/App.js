@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchMovies, fetchMoviesBySearch } from "./store/actions/movieActions";
 import Movie from './components/Movie';
 import { Search } from './components/Search';
+import Header from './components/Header';
+import './App.css';
 
 
 const App = () => {
@@ -22,11 +24,9 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <div className='row'>
-        <Movie movies={state.movies} />
-        <Search searchMovie={searchMovie} />
-      </div>
+    <div className="App">
+      <Header heading="FinProH8" searchMovie={searchMovie} />
+      <Movie movies={state.movies} />
     </div >
   )
 }

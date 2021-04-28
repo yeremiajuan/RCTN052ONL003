@@ -19,29 +19,21 @@ export const fetchMoviesBySearch = (searchValue) => {
     }
 }
 
-export const fetchMovies = () => {
-    return (dispatch) => {
-        axios({
-            method: 'get',
-            url: `http://www.omdbapi.com/?s=man&apikey=263d22d8`,
-        })
-            .then(({ data }) => {
-                dispatch({
-                    type: "FETCH MOVIES",
-                    payload: data.Search,
-                })
-                console.log(data)
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-    }
-}
-
-
-export const searchMovie = text => dispatch => {
-    dispatch({
-        type: "SEARCH_MOVIE",
-        payload: text
-    });
-};
+// export const fetchMovies = () => {
+//     return (dispatch) => {
+//         axios({
+//             method: 'get',
+//             url: `http://www.omdbapi.com/?s=man&apikey=263d22d8`,
+//         })
+//             .then(({ data }) => {
+//                 dispatch({
+//                     type: "FETCH MOVIES",
+//                     payload: data.Search,
+//                 })
+//                 console.log(data)
+//             })
+//             .catch((error) => {
+//                 console.log(error);
+//             })
+//     }
+// }

@@ -9,18 +9,22 @@ export const Search = ({ searchMovie }) => {
         setSearchValue(value);
     }
 
-    const handleSearchMovies = () => {
-        searchMovie(searchValue)
-        setSearchValue("");
+    const handleSearchMovies = (e) => {
+        e.preventDefault();
+        searchMovie(searchValue);
+        Array.from(document.querySelectorAll("input")).forEach(
+            input => (input.value = "")
+        );
+        setSearchValue('');
     }
 
     return (
-        <div>
-            <input onChange={handleInput}
+        <form className="search">
+            <input type="text" onChange={handleInput}
                 placeholder='Search...'
             ></input>
-            <button onClick={handleSearchMovies}>Search</button>
-        </div>
+            <button type="submit" onClick={handleSearchMovies}>Search</button>
+        </form>
     );
 };
 
