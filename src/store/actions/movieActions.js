@@ -8,9 +8,10 @@ export const fetchMoviesBySearch = (searchValue) => {
             url: `http://www.omdbapi.com/?s=${searchValue}&apikey=263d22d8`,
         })
             .then(({ data }) => {
+                console.log(data)
                 dispatch({
                     type: "FETCH MOVIES BY SEARCH",
-                    payload: data.Search,
+                    payload: data,
                 })
             })
             .catch((error) => {

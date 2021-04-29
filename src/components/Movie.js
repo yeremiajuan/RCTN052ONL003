@@ -6,7 +6,7 @@ const Movie = (props) => {
     return (
         <>
             <div className="movies">
-                {props.movies != undefined ? props.movies.map((movie, index) => (
+                {props.movies.Search != undefined ? props.movies.Search.map((movie, index) => (
                     <>
                         <div className='movie'>
                             <p>{movie.Title}</p>
@@ -14,7 +14,7 @@ const Movie = (props) => {
 
                         </div>
                     </>
-                )) : <div>No result</div>}
+                )) : <div>{props.movies.Error}</div>}
             </div>
         </>
     )
